@@ -49,7 +49,6 @@ select pt.name,count(od.quantity) as Order_Count from pizza_types pt
   order by 2 desc
   limit 5;
 
--- Intermediate:
 -- Join the necessary tables to find the total quantity of each pizza category ordered.
 
 select pt.category, sum(od.quantity) as orders from pizza_types pt 
@@ -86,7 +85,6 @@ select pt.name, round(sum(od.quantity * pz.price),2) as revenue
   order by 2 desc
   limit 3;
 
--- Advanced:
 -- Analyze the cumulative revenue generated over time.
 select order_date, sum(revenue) over (order by order_date) as cum_revenue 
   from
