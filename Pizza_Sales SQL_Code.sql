@@ -96,5 +96,4 @@ select order_date, sum(revenue) over (order by order_date) as cum_revenue
   join pizzas pz
   on pz.pizza_id = od.pizza_id 
   group by 1 ) as a;
-  
-  dgd
+
